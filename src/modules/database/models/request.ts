@@ -25,4 +25,12 @@ export class Request extends Model implements IRequest {
   public $beforeUpdate(): void {
     this.updatedDate = new Date();
   }
+
+  public static get tableName(): string {
+    return 'Request';
+  }
+
+  public static get relationMappings(): any {
+    return {};
+  }
 }

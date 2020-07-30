@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { IPaginationParams } from 'modules/common/interfaces/pagination';
-import { IRequest } from './../../database/interfaces/request';
 import { Request } from 'modules/database/models/request';
 import { Page, Transaction } from 'objection';
+
+import { IRequest } from './../../database/interfaces/request';
 
 @Injectable()
 export class RequestRepository {

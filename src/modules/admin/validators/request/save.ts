@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsNotEmpty, IsOptional, IsString, Min, IsDecimal } from 'class-validator';
+import { IsInt, IsNotEmpty, IsNumber, IsOptional, IsString, Min } from 'class-validator';
 import { IRequest } from 'modules/database/interfaces/request';
 
 export class SaveValidator implements IRequest {
@@ -21,8 +21,8 @@ export class SaveValidator implements IRequest {
   public amount: number;
 
   @IsNotEmpty()
-  @IsDecimal()
+  @IsNumber()
   @Min(0)
-  @ApiProperty({ required: true, type: 'decimal' })
+  @ApiProperty({ required: true, type: 'number' })
   public value: number;
 }
